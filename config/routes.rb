@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'static/about'
-
-  get 'static/team'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,6 +12,7 @@ Rails.application.routes.draw do
 
   # Get /posts -> Show an index of all my blog posts
       get '/posts' => 'posts#index'
+      get '/posts/:id' => 'posts#show', as: :post
 
       get '/about' => 'static#about'
       get '/team' => 'static#team'
